@@ -4,6 +4,10 @@ namespace Deliverable1
 {
     class Program
     {
+        public static string Indent(int count)
+        {
+            return "".PadLeft(count);
+        }
         public static void Run()
         {
             Console.WriteLine("How many people are we making PB and J sandwiches for?");
@@ -18,15 +22,28 @@ namespace Deliverable1
             decimal totalPb = (2 * people) / 32;
             decimal totalJelly = (4 * people) / 48;
 
-            /* There has to be an easier way than to change all of these to decimals right away? */
+            /* Do all of these need to be decimal? */
 
-            Console.WriteLine("\nYou need:\n\n" + slices + " slices of bread\n" + tbsp + " tablespoons of peanut butter\n" + jelly + " teaspoons of jelly\n\n" + "which is...\n\n" + Math.Ceiling(totalLoaves) + " loaves of bread\n" + Math.Ceiling(totalPb) + " jars of peanut butter\n" + Math.Ceiling(totalJelly) + " jars of jelly\n");
+            Console.WriteLine();
+            Console.WriteLine("You need:");
+            Console.WriteLine();
+            Console.WriteLine(Indent(3) + slices + " slices of bread");
+            Console.WriteLine(Indent(3) + tbsp + " tablespoons of peanut butter");
+            Console.WriteLine(Indent(3) + jelly + " teaspoons of jelly");
+            Console.WriteLine();
+            Console.WriteLine("which is...");
+            Console.WriteLine();
+            Console.WriteLine(Indent(3) + Math.Ceiling(totalLoaves) + " loaves of bread");
+            Console.WriteLine(Indent(3) + Math.Ceiling(totalPb) + " jars of peanut butter");
+            Console.WriteLine(Indent(3) + Math.Ceiling(totalJelly) + " jars of jelly");
+            Console.WriteLine();
 
             Console.WriteLine("Would you like to restart?");
             string reply = Console.ReadLine();
             if (reply == "yes"
                 || reply == "y")
             {
+                Console.WriteLine();
                 Run();
             }
             else
