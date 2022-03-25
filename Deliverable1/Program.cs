@@ -12,17 +12,14 @@ namespace Deliverable1
         {
             Console.WriteLine("How many people are we making PB and J sandwiches for?");
 
-            string input =
-                Console.ReadLine();
-            decimal people = int.Parse(input);
-            decimal slices = people * 2;
-            decimal tbsp = people * 2;
-            decimal jelly = people * 4;
-            decimal totalLoaves = slices / 28;
-            decimal totalPb = (2 * people) / 32;
-            decimal totalJelly = (4 * people) / 48;
-
-            /* Do all of these need to be decimal? */
+            string input = Console.ReadLine();
+            double people = int.Parse(input);
+            double slices = people * 2;
+            double tbsp = people * 2;
+            double jelly = people * 4;
+            double totalLoaves = slices / 28;
+            double totalPb = (2 * people) / 32;
+            double totalJelly = (4 * people) / 48;
 
             Console.WriteLine();
             Console.WriteLine("You need:");
@@ -57,5 +54,3 @@ namespace Deliverable1
         }
     }
 }
-
-/* Testing GitHub for desktop setup */
